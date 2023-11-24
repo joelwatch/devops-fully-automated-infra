@@ -25,6 +25,13 @@ pipeline {
         stage('Terraform init') {
             steps {
                 echo 'Code syntax checking...'
+                sh 'sudo terraform init'
+            }
+        }
+
+        stage('Terraform validate') {
+            steps {
+                echo 'Code syntax validation...'
                 sh 'sudo terraform validate'
             }
         }
